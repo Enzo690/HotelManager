@@ -10,7 +10,8 @@ $router = new HotelManager\Router($_SERVER["REQUEST_URI"]);
 
 //GET VIEW
 $router->get('/', "AccueilController@index");
-;
+$router->get('/stats', "StatsController@index");
+$router->get('/pools', "PoolController@index");
 
 // POST
 $router->post('/nouveau', "AccueilController@store");

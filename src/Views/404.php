@@ -208,7 +208,7 @@ ob_start();
                 </g>
             </svg>
 
-            <p id="errorText">O-o-oh! Something broke.</p>
+            <p id="errorText">Cette page n'existe pas.</p>
         </div>
         <a id="errorLink" href="/">Go Back</a>
 

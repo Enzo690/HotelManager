@@ -6,7 +6,7 @@
 /* Other / Alert */
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans");
 .error {
-  background: #fff;
+  background: #f7f7f7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
