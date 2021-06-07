@@ -21,7 +21,7 @@ class StockController extends BaseController
     public function index()
     {
 
-        require VIEWS . '/stocks.php';
+        require VIEWS . '/stock.php';
     }
 
     // page supression

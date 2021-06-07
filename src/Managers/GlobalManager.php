@@ -1,6 +1,6 @@
 <?php
 
-namespace HotelManager\Models;
+namespace HotelManager\Managers;
 
 /** Class UserManager **/
 class GlobalManager

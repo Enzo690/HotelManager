@@ -24,48 +24,4 @@ class AccueilController extends BaseController
         require VIEWS . '/index.php';
     }
 
-    // page supression
-    public function supp()
-    {
-        require VIEWS . '/supp.php';
-    }
-
-    // page modif
-    public function modif()
-    {
-
-        require VIEWS . '/modif.php';
-    }
-
-    // page insertion POST
-    public function store()
-    {
-        $this->validator->validate([
-            "nom" => ["required"],
-            "prenom" => ["required"],
-            "nation" => ["required","numeric"],
-            "formation" => ["required","numeric"],
-        ]);
-        $_SESSION['old'] = $_POST;
-
-        if (!$this->validator->errors()) {
-
-            header("Location: /");
-        }
-    }
-
-    // Delete Stagiaire
-    public function delete()
-    {
-        header("Location: /supp");
-    }
-
-    // update pas fini (tristesse)
-    public function update()
-    {
-        
-    }
-
-
-
 }

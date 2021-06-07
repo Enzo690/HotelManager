@@ -38,3 +38,13 @@ function close(e) {
     displayPermission.classList.remove('d-none');
     removeSelectOptions.classList.add('d-none');  
 }
+
+    $('#example').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
+});

@@ -20,8 +20,8 @@ class ClientController extends BaseController
 
     public function index()
     {
-
-        require VIEWS . '/index.php';
+        //$this->manager->getAll('client', 'HotelManager\Models\Client');
+        require VIEWS . '/client.php';
     }
 
     // page supression

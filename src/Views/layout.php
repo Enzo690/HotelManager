@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <title>Hotel Manager - <?= $_SERVER['PHP_SELF'] ?></title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/library/bootstrap-4.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
@@ -15,6 +16,7 @@
 <body>
 
 <div class="wrapper">
+
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -44,8 +46,7 @@
         <ul class="navbar-nav ml-auto">
             <!-- Messages Dropdown Menu -->
             <li class="nav-item">
-                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
-                            class="fas fa-th-large"></i></a>
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i class="fas fa-th-large"></i></a>
             </li>
         </ul>
     </nav>
@@ -77,7 +78,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/client" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Client</p>
                         </a>
@@ -90,21 +91,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/stock" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Stock Alimentaire</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="stats" class="nav-link">
+                        <a href="/stats" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Statistique</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/order" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Facturation</p>
                         </a>
@@ -118,7 +119,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/pools" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Espace Aquatique</p>
                         </a>
@@ -191,19 +192,21 @@
     </footer>
 </div>
 
+
 <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="js/sweetalert2.min.js"></script>
 <script src="js/ChartJS.min.js"></script>
-<script src="js/scripts.js"></script>
 <script src="js/validation.js"></script>
 <script src="js/charts.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/alert.js"></script>
+
 
 </body>
-
-
-
 
 </html>
 <?php
