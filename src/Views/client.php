@@ -10,28 +10,7 @@ ob_start();
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="example" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>User</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>183</td>
-                    <td>John Doe</td>
-                    <td>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-xl-plus"><i class="fas fa-plus"></i></button>
-                        <button class="btn btn-warning" data-toggle="modal" data-target="#modal-xl-edit"><i class="fas fa-pencil-alt"></i></i></button>
-                        <button class="btn btn-danger" data-toggle="modal"><i class="fas fa-times"></i></button>
-                    </td>
-
-                </tr>
-
-                </tbody>
-
+            <table id="dataTable" class="table table-bordered table-hover">
             </table>
         <!-- /.card-body -->
     </div>
@@ -66,36 +45,25 @@ ob_start();
 
     <div class="modal fade" id="modal-xl-add" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-xl">
-            <form role="form" method="post">
+            <form id="formAdd" method="post">
 
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-body">
 
                     <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text" id="">Upload</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
+                        <label for="newEmail">Adresse email</label>
+                        <input name="email" type="email" class="form-control" id="newEmail" placeholder="Email">
+                    </div>
+                        <div class="form-group">
+                            <label for="newNom">Nom</label>
+                            <input name="nom" id="newNom" type="text" class="form-control" placeholder="Nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPreNom">Prenom</label>
+                            <input name="prenom" id="newPreNom" type="text" class="form-control" placeholder="Prenom">
+                        </div>
+
                         <!-- /.card-body -->
                     </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -104,8 +72,8 @@ ob_start();
                 </div>
 
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
                 </div>
                 </form>
 

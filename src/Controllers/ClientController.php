@@ -3,7 +3,7 @@
 
 namespace HotelManager\Controllers;
 
-use HotelManager\Models\GlobalManager;
+use HotelManager\Managers\GlobalManager;
 use HotelManager\Validator;
 
 /** Class UserController **/
@@ -20,9 +20,22 @@ class ClientController extends BaseController
 
     public function index()
     {
-        //$this->manager->getAll('client', 'HotelManager\Models\Client');
+        $clients = $this->manager->getAll('client', 'HotelManager\Models\Client');
         require VIEWS . '/client.php';
     }
+
+        public function all(){
+            header('Content-Type: application/json');
+            $clients = $this->manager->getAll('client', 'HotelManager\Models\Client');
+            $tab = [];
+            foreach ($clients as $key => $client){
+                $tab[$key]['id'] = $client->getIdClient();
+                $tab[$key]['nom'] = $client->getNom();
+                $tab[$key]['prenom'] = $client->getPrenom();
+                $tab[$key]['email'] = $client->getEmail();
+            }
+            echo json_encode($tab);
+     }
 
     // page supression
     public function supp()
@@ -40,25 +53,32 @@ class ClientController extends BaseController
     // page insertion POST
     public function store()
     {
+        /*
         $this->validator->validate([
             "nom" => ["required"],
-
-        ]);
+            "prenom" => ["required"],
+            "email" => ["required"]
+        ]);*/
         $_SESSION['old'] = $_POST;
 
-        if (!$this->validator->errors()) {
+        $data = json_decode($_POST);
 
-            header("Location: /");
-        }
+        $this->manager->store('client',
+            ['id_client', 'nom', 'prenom', 'email'],
+            [uniqid(), $data['nom'], $data['prenom'], $data['email']]);
+/*
+        if (!$this->validator->errors()) {
+            header("Location: /erreurBG");
+        }*/
     }
 
-    // Delete Stagiaire
+    // Delete
     public function delete()
     {
         header("Location: /supp");
     }
 
-    // update pas fini (tristesse)
+    // update
     public function update()
     {
 

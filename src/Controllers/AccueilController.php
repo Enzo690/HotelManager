@@ -3,7 +3,7 @@
 
 namespace HotelManager\Controllers;
 
-use HotelManager\Models\GlobalManager;
+use HotelManager\Managers\GlobalManager;
 use HotelManager\Validator;
 
 /** Class UserController **/

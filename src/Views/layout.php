@@ -98,13 +98,6 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/stats" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Statistique</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
                         <a href="/order" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Facturation</p>
@@ -202,8 +195,8 @@
 <script src="js/ChartJS.min.js"></script>
 <script src="js/validation.js"></script>
 <script src="js/charts.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/alert.js"></script>
+<script type="module" src="js/scripts.js"></script>
+<script  src="js/alert.js"></script>
 
 
 </body>

@@ -1,4 +1,4 @@
-
+import Info from './Info.js';
 // Wait for document loaded (in jQuery)
 
 function readUrl(input) {
@@ -39,12 +39,43 @@ function close(e) {
     removeSelectOptions.classList.add('d-none');  
 }
 
-    $('#example').DataTable({
-    "paging": true,
-    "lengthChange": false,
-    "searching": true,
-    "ordering": true,
-    "info": true,
-    "autoWidth": false,
-    "responsive": true,
-});
+async function apiPost (url, form, sucess = () => console.log('success')) {
+    $.ajax({
+        url: url,
+        type: 'post',
+        data: form.serialize(),
+        success: () => {
+            sucess();
+        }
+    });
+}
+
+function getUrl(){
+    // Supprimons l'éventuel dernier slash de l'URL
+    let urlcourante = document.location.href.replace(/\/$/, "");
+    // Gardons dans la variable queue_url uniquement la portion derrière le dernier slash de urlcourante
+    let queue_url = urlcourante.substring (urlcourante.lastIndexOf( "/" )+1 );
+    return queue_url;
+}
+
+let dataSet = [];
+let info = new Info(dataSet);
+// generation de tableau en fonction de la page
+switch (getUrl()){
+    case 'client' :
+        info.getClient();
+
+        $('formAdd').submit( (e) => {
+            e.preventDefault();
+           let formAddClient =  new FormData(document.getElementById('formAdd'))
+            console.log(formAddClient);
+           apiPost('/api/newmember', $("#formAdd"), info.getClient());
+
+        })
+
+
+        break;
+}
+
+
+
