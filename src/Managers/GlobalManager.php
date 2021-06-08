@@ -25,7 +25,7 @@ class GlobalManager
     {
         $stmt = $this->bdd->prepare("SELECT * FROM $table WHERE $conditionCol");
         $stmt->execute($id);
-        $stmt->setFetchMode(\PDO::FETCH_CLASS, $className);
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, 'HotelManager\Models'.$className);
         return $stmt->fetchAll();
     }
 

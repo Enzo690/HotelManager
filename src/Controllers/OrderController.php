@@ -9,15 +9,6 @@ use HotelManager\Validator;
 /** Class UserController **/
 class OrderController extends BaseController
 {
-    private $manager;
-    private $validator;
-
-    public function __construct()
-    {
-        $this->manager = new GlobalManager();
-        $this->validator = new Validator();
-    }
-
     public function index()
     {
         require VIEWS . '/order.php';

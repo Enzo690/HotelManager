@@ -73,7 +73,7 @@ ob_start();
 
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <button id="addUserBut" type="submit" class="btn btn-primary">Ajouter</button>
                 </div>
                 </form>
 

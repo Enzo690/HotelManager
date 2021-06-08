@@ -1,18 +1,9 @@
-
-
 /* predefined style template */
-@import './desktop/_base';
-/* mobile style */
-@import './responsive/_base';
+@import 'element/_base';
 
-/* custom style by enzo */
 /* Desktop style */
-@import './desktop/_header';
-@import './desktop/_footer';
-
-/* Mobile style */
-@import './responsive/_header';
-@import './responsive/_footer';
+@import 'element/_header';
+@import 'element/_footer';
 
 /* Other / Alert */
 @import './_404';

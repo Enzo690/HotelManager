@@ -1,4 +1,4 @@
-import Info from './Info.js';
+import Info from './class/Client.js';
 // Wait for document loaded (in jQuery)
 
 function readUrl(input) {
@@ -39,17 +39,22 @@ function close(e) {
     removeSelectOptions.classList.add('d-none');  
 }
 
-async function apiPost (url, form, sucess = () => console.log('success')) {
+async function apiPost (url, form, dataTable, table, msgGood = "Opération effectué avec sucés !") {
     $.ajax({
         url: url,
         type: 'post',
         data: form.serialize(),
-        success: () => {
-            sucess();
-        }
+        success: (data) => {
+            Toast.fire({
+                type: data.status === "success" ? 'success' : "error",
+                title: data.status === "success" ? msgGood : data.error
+            });
+            if(data.status === "success")   dataTable.row.add(table).draw( false );
+        },
+
     });
 }
-
+// pour obtenir l'url
 function getUrl(){
     // Supprimons l'éventuel dernier slash de l'URL
     let urlcourante = document.location.href.replace(/\/$/, "");
@@ -57,25 +62,27 @@ function getUrl(){
     let queue_url = urlcourante.substring (urlcourante.lastIndexOf( "/" )+1 );
     return queue_url;
 }
-
+// data for datatable
 let dataSet = [];
-let info = new Info(dataSet);
+// class instance
+let client = new Info(dataSet);
 // generation de tableau en fonction de la page
+
 switch (getUrl()){
     case 'client' :
-        info.getClient();
-
-        $('formAdd').submit( (e) => {
+        client.getClient();
+        // soumission formulaire
+        $('#formAdd').submit( (e) => {
             e.preventDefault();
-           let formAddClient =  new FormData(document.getElementById('formAdd'))
-            console.log(formAddClient);
-           apiPost('/api/newmember', $("#formAdd"), info.getClient());
+            let formRes = $("#formAdd").serializeArray();
+            let table = [
+                `${formRes[1].value} ${formRes[2].value}`,
+                formRes[0].value,
+                client.getTools()
+            ]
+            apiPost('/api/newmember', $("#formAdd"), client.getDataTable(), table);
 
         })
-
-
         break;
 }
-
-
 
